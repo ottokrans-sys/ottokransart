@@ -1,0 +1,639 @@
+/* CUSTOM FONTS */
+@font-face {
+  font-family: 'Recoleta';
+  src: url('fonts/Recoleta-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Lato-Light';
+  src: url('fonts/Lato-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Lato-Medium';
+  src: url('fonts/Lato-Medium.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+/* GENERAL RULES */
+a,
+a:visited,
+a:active {
+  color: #444;
+  text-decoration: none;
+}
+
+h2 {
+  font-family: 'Recoleta', serif;
+  font-weight: normal;
+  font-size: 2rem;
+  margin-top: 0rem;
+  margin-bottom: 0.5rem;
+  text-decoration: none;
+  color:#444;
+}
+
+h1 {
+  font-family: 'Lato-Medium', serif;
+  font-weight: normal;
+  font-size: 1.2rem;
+  margin-top: 0;
+  text-decoration: none;
+  color:#444;
+}
+
+h3 {
+  font-family: 'Lato-Light', sans-serif;
+  font-weight: normal;
+  margin: 0;
+  text-decoration: none;
+  color:#444;
+}
+
+h4  {
+  font-family: 'Lato-Medium', sans-serif;
+  font-weight: normal;
+  margin: 0;
+  text-decoration: none;
+  color:#444;
+}
+
+p {
+  font-family: 'Lato-Light', sans-serif;
+  font-weight: normal;
+  font-size: 1.1rem;
+  text-decoration: none;
+  color:#444;
+  word-spacing: 30%;
+  line-height: 170%;
+}
+
+/* CONTENT */
+body {
+  font-family: 'Lato-Light', sans-serif;
+  font-weight: normal;
+  margin: 0 auto;
+  padding: 5rem;
+  max-width: 1400px;
+  scroll-behavior: smooth;
+  background: #fff;
+  color: #222;
+}
+
+header {
+  position: flex;
+  left: 0;
+  width: 100%;
+  background: transparent;
+  z-index: 1000;
+  padding: 0; /* Make sure no extra padding pushes content wider */
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav   {
+  display: flex;
+  gap: 3rem;
+}
+
+.logo {
+  font-family: 'Recoleta', serif;
+  font-size: 2rem;
+  text-decoration: none;
+  color:#444;
+}
+
+nav a {
+  font-family: 'Recoleta', serif;
+  font-size: 1.5rem;
+  margin-right: 0;
+  text-decoration: none;
+  color:#444444;
+}
+
+nav a:hover {
+  color: #999;
+}
+
+/*  HEADER IMAGE  */
+.hero-image {
+  width: 100%; /* Scales with container at all sizes */
+  max-width: 1200px; /* Never exceeds 1200px */
+  height: auto; /* Maintains aspect ratio */
+  display: block;
+  margin: 2.5rem auto 0 auto; /* Centers it and adds top margin */
+}
+
+/*    ABOUT   */
+.about-wrapper {
+  display: flex;
+  gap: 2rem;
+  align-items: stretch;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.about-text {
+  flex: 2;
+  margin: 0;
+}
+
+.portrait-container {
+  height: 400px;
+  flex: 1;
+  display: flex;
+  align-items: stretch;
+  justify-content: flex-end;
+  background-color: #e0e0e0;
+  margin-top: 4rem; /* h2 height (2rem) + h2 margin-bottom (0.5rem) */
+}
+
+.portrait  {
+  width: 100%;
+  height: 100%;
+  opacity: 70%;
+  max-height: none;
+  object-fit: cover;
+  display: block;
+}
+
+.section {
+  font-family: 'Lato-Medium', sans-serif;
+  padding: 0;
+  max-width: 1200px;
+  margin: 3rem auto 0 auto;
+}
+
+
+/* GALLERY */
+.gallery {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.gallery-row {
+  display: flex;
+  gap: 2rem;
+}
+
+/* Rows 1 & 2: full width */
+.row-full {
+  width: 100%;
+}
+
+.row-full .gallery-item {
+  flex: var(--aspect);
+  min-width: 0;
+}
+
+.row-full .image-wrapper {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.row-full .img-placeholder {
+  
+  width: 100%;
+  aspect-ratio: var(--aspect);
+  background-color: #e0ddd8;
+  display: block;
+}
+
+.row-full .gallery-item img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Row 3: centered, height set by JavaScript */
+.row-centered {
+  display: flex;
+  justify-content: center;
+  width: 90%;
+  max-width: 90%;
+  margin: 0 auto;
+}
+
+.row-centered .gallery-item {
+  flex: var(--aspect) 1 0%;
+  min-width: 0;
+  height: 100%;
+}
+
+.row-centered .image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.row-centered .img-placeholder {
+  width: 100%;
+  height: 100%;
+  background-color: #e0ddd8;
+  display: block;
+}
+
+.row-centered .gallery-item img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Shared caption styles */
+.gallery-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(255, 255, 255, .3);
+  padding: 1rem;
+  text-align: left;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.image-wrapper:hover .gallery-caption {
+  opacity: 1;
+}
+
+.gallery-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: transparent;
+  padding: 1rem;
+  text-align: left;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.gallery-caption h4 {
+  font-size: 0.8rem;
+  margin: 0;
+  color: #444;
+}
+
+.gallery-caption .caption-year {
+  font-family: 'Lato-Light', sans-serif;
+  font-size: 0.8rem;
+  color: #333;
+}
+
+.gallery-caption .caption-details {
+  display: none;
+}
+
+/*  LIGHTBOX (enlarge images) */
+.lightbox {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 1); /* white with 90% opacity */
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+
+.lightbox img {
+  max-width: 90%;
+  max-height: 85%;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+#lightbox-caption {
+  position: absolute;
+  bottom: 1.3rem;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  white-space: nowrap;
+  display: flex;
+  align-items: baseline;
+  gap: 0.4rem;
+}
+
+#lightbox-caption h4 {
+  margin: 0 1.3rem 0 0;
+  color: #444;
+}
+
+#lightbox-caption p {
+  margin: 0.3rem 0 0 0;
+  font-size: 0.9rem;
+  color: #666;
+  word-spacing: normal;
+  line-height: 140%;
+}
+
+.lightbox .close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 1.5rem;
+  color: #999;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2rem;
+  color: #999;
+  cursor: pointer;
+  user-select: none;
+  padding: 0 1rem;
+  z-index: 10000;
+}
+
+.arrow.left {
+  left: 30px;
+}
+
+.arrow.right {
+  right: 30px;
+}
+
+/* CONTACT PAGE */
+#contact a {
+  color: #333; /* default link color */
+  text-decoration: none; /* optional: removes underline */
+}
+
+#contact a:hover {
+  color: #999 /* change to red or your preferred color */
+}
+
+/*  FOOTER  */
+footer {
+  text-align: center;
+  font-size: 0.9rem;
+  color: #666;
+  padding: 40px 20px;
+  background: none;
+  margin-top: 60px;
+}
+
+footer a {
+  color: #666;
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: #999;
+}
+
+/* ============================================
+   MOBILE RESPONSIVE STYLES
+   ============================================ */
+
+/* Tablets and below */
+@media screen and (max-width: 968px) {
+  body {
+    padding: 2rem;
+  }
+  
+  h2 {
+    font-size: 1.6rem;
+    margin-top: 0;
+  }
+
+  .about-wrapper  {
+    margin-top: 3rem;
+  }
+  
+  nav {
+    gap: 1.5rem;
+  }
+  
+  nav a {
+    font-size: 1.2rem;
+  }
+  
+  .hero-image {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    margin-top: 2rem;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  
+  .container {
+    padding: 0;
+  }
+
+  .portrait-container {
+    height: 400px; /* Smaller than desktop's 500px */
+    margin-top: 3.5rem; /* Align with body text top */
+  }  
+}
+
+/* Mobile phones */
+@media screen and (max-width: 768px) {
+  body {
+    padding: 1.5rem;
+  }
+  
+  .container {
+    padding: 0;
+  }
+  
+  /* Navigation */
+  .logo {
+    font-size: 1.5rem;
+  }
+  
+  nav {
+    gap: 1rem;
+  }
+  
+  nav a {
+    font-size: 1rem;
+  }
+  
+  /* Typography */
+  h2 {
+    font-size: 1.4rem;
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+  }
+  
+  p {
+    font-size: 1rem;
+    line-height: 160%;
+  }
+  
+  /* About section - side by side on mobile*/
+  .about-wrapper {
+  flex-direction: row; /* Keep side-by-side */
+  gap: 1rem;
+  align-items: flex-start; /* Align to top */
+  margin-top: 2rem;
+  }
+
+  .about-text {
+  flex: 1.2; /* Takes slightly more space */
+  }
+
+  .portrait-container {
+  flex: 0.8; /* Takes less space */
+  height: 280px; /* Reasonable height */
+  width: auto;
+  margin-top: 3rem; /* Align with body text top */
+  min-width: 120px; /* Prevent it from getting too narrow */
+  }
+  
+  .portrait {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  /* Gallery - stacked single column on mobile */
+  .gallery-row {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .row-full .gallery-item {
+    flex: none;
+    width: 100%;
+  }
+
+  .row-centered {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .row-centered .gallery-item {
+    height: auto;
+    width: 100%;
+  }
+
+  .row-centered .img-placeholder {
+  aspect-ratio: unset !important;
+  width: 100%;
+  }
+
+  .gallery-caption {
+    opacity: 1;
+    position: static;
+    background: transparent;
+    padding: 0.5rem 0;
+  }
+  
+  /* Lightbox adjustments */
+  .lightbox img {
+    max-width: 95%;
+    max-height: 70%;
+  }
+  
+  .lightbox .close {
+    top: 10px;
+    right: 15px;
+    font-size: 2rem;
+  }
+  
+  .arrow {
+    font-size: 1.5rem;
+    padding: 0 0.5rem;
+  }
+  
+  .arrow.left {
+    left: 10px;
+  }
+  
+  .arrow.right {
+    right: 10px;
+  }
+  
+  #lightbox-caption {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  white-space: nowrap;
+  }
+
+  #lightbox-caption h4 {
+    margin: 0;
+    color: #444;
+  } 
+
+  #lightbox-caption p {
+    margin: 0.3rem 0 0 0;
+    font-size: 0.9rem;
+    color: #666;
+    word-spacing: normal;
+    line-height: 140%;
+  }
+
+  /* Hero image */
+  .hero-image {
+    margin-top: 1.5rem;
+    width: 100%;
+  }
+}
+
+/* Very small phones */
+@media screen and (max-width: 480px) {
+  body {
+    padding: 1rem;
+  }
+  
+  .logo {
+    font-size: 1.3rem;
+  }
+  
+  nav a {
+    font-size: 0.9rem;
+  }
+  
+  h2 {
+    font-size: 1.2rem;
+  }
+  
+  .portrait-container {
+    height: 300px; /* Even smaller on tiny screens */
+  }
+}

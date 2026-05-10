@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Otto Krans</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+  <script defer src="script.js"></script>
+</head>
+
+<div id="lightbox" class="lightbox">
+  <span class="close">&times;</span>
+  <span class="arrow left">&#10094;</span>
+    <img id="lightbox-img" src="" alt="Enlarged artwork">
+    <div id="lightbox-caption">
+      <h4 id="lightbox-title"></h4>
+      <p id="lightbox-details"></p>
+    </div>
+  <span class="arrow right">&#10095;</span>
+</div>
+
+<body>
+  <header>
+    <div class="container nav-container">
+      <a href="#" class="logo">otto krans</a>
+      <nav>
+        <a href="#about" class="logo2">about</a>
+        <a href="#works" class="logo2">works</a>
+        <a href="#contact" class="logo2">contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <section id="home" class="hero">
+    <div class="container">     
+      <img src="images/header2-work.JPEG" alt="Hero image" class="hero-image">
+    </div>
+  </section>
+
+  <section id="about" class="section">
+      <div class="about-wrapper">
+        <div class="about-text">
+          <h2>about</h2>
+            <p>
+              Born in The Hague (NL) in 1995, Otto Krans grew up surrounded by art, as his father was both a practicing artist and a collector. From the age of four he spent time in his father's atelier, experimenting and making - a foundation that shaped how he approaches objects, space and materials. During his architecture studies at Delft University of Technology, he was always most drawn to physical modelling above anything else.
+            </p>
+            <p>
+              Over time, Otto grew fascinated by the subjectivity of human perception - how responses to the same object can diverge, completely depending on who is looking. To him, this reflects something fundamental: that reality itself is largely non-defined and non-objective, human experience that's far more grey area than clear fact. This perspective forms the basis of his artistic practice.
+            </p>            
+            <p>
+              His practice centers on sculptural canvasses: wall-based mixed media works built around concealed forms that determine the final surface from within. The visible is always a consequence of something hidden - a tension that runs through his work.
+            </p> 
+        </div>
+        <div class="portrait-container">
+          <img src="images/Profielfoto informeel.jpg" alt="Profile picture" class="portrait">
+        </div> 
+      </div>  
+  </section>
+  
+  <section id="works" class="section">
+    <div id="works-wrapper">
+      <h2>works</h2>
+      <p>From series 'Underlying perspectives':</p>
+      <br>
+
+      <div class="gallery">
+
+        <!-- ROW 1: Landscape + Portrait -->
+        <div class="gallery-row row-full">
+
+          <div class="gallery-item" style="--aspect: calc(20/17)">
+            <div class="image-wrapper">
+              <div class="img-placeholder">
+                <img src="images/Work1-HiRes.JPEG" alt="Work1">
+              </div>
+              <div class="gallery-caption">
+                <h4>Natural Emanation / Natuurlijke Uitvloeiing, 2025</h4>
+                <p class="caption-details">20 × 17 in · Cotton canvas, pigmented medium, wool, museum board</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="gallery-item" style="--aspect: calc(13/16)">
+            <div class="image-wrapper">
+              <div class="img-placeholder">
+                <img src="images/Work2-HiRes.JPEG" alt="Work2">
+              </div>
+              <div class="gallery-caption">
+                <h4>Intertwine / Verstrengeling, 2025</h4>
+                <p class="caption-details">13.5 × 16 in · Cotton canvas, pigmeted medium, museum board</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- ROW 2: Portrait + Landscape -->
+        <div class="gallery-row row-full">
+
+          <div class="gallery-item" style="--aspect: calc(13/16.5)">
+            <div class="image-wrapper">
+              <div class="img-placeholder">
+                <img src="images/Work3-HiRes.JPEG" alt="Work3">
+              </div>
+              <div class="gallery-caption">
+                <h4>Encounter / Ontmoeting, 2025</h4>
+                <p class="caption-details">13 × 16.5 in · Cotton canvas, pigmeted medium, museum board</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="gallery-item" style="--aspect: calc(22/16)">
+            <div class="image-wrapper">
+              <div class="img-placeholder">
+                <img src="images/Work4-HiRes.JPEG" alt="Work4">
+              </div>
+              <div class="gallery-caption">
+                <h4>Fresh cut, 2025</h4>
+                <p class="caption-details">22 × 16 in · Cotton canvas, pigmeted medium, acrylic paint, museum board</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- ROW 3: Square + Portrait — centered, not full width -->
+        <div class="gallery-row row-centered">
+
+          <div class="gallery-item" style="--aspect: calc(14/14)">
+            <div class="image-wrapper">
+              <div class="img-placeholder">
+                <img src="images/Work5-HiRes.JPEG" alt="Work5">
+              </div>
+              <div class="gallery-caption">
+                <h4>Mutilated, 2025</h4>
+                <p class="caption-details">14 × 14 in · Cotton canvas, pigmeted medium, acrylic medium, steel bolts, museum board</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="gallery-item" style="--aspect: calc(12.5/16)">
+            <div class="image-wrapper">
+              <div class="img-placeholder">
+                <img src="images/Work6-HiRes.JPEG" alt="Work6">
+              </div>
+              <div class="gallery-caption">
+                <h4>Unfolding / Ontvouwing, 2025</h4>
+                <p class="caption-details">12.5 × 16 in · Plaster and fabric on wood</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </section> 
+
+  <section id="contact" class="section">
+    <h2>contact</h2>
+    <p>For inquiries, collaborations, or home studio visits, feel free to get in touch. </br> Email: <a href="mailto:ottokrans.art@gmail.com">ottokrans.art@gmail.com</a></p>
+    <p>Home studio in Brooklyn, New York</p>
+    <p>
+      <a href="https://instagram.com/ottokrans" target="_blank">
+        <img src="logos/noun-instagram-7605190.svg" alt="Instagram" style="width: 1.2rem; height: 1.2rem; vertical-align: middle; margin-right: 0.4rem;">
+      </a>
+    </p>
+  </section>
+
+  <div class="lightbox" id="lightbox">
+    <span class="close">&times;</span>
+    <img src="" alt="Enlarged Image" id="lightbox-img">
+  </div>
+
+  <footer>
+    <div class="container">
+      otto krans &copy; 2026 &nbsp; &nbsp; <a href="https://instagram.com/ottokrans" target="_blank">instagram</a>
+    </div>
+  </footer>
+
+</body>
+</html>
